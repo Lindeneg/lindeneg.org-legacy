@@ -7,13 +7,12 @@ import { PostCard } from "../components/PostCard";
 const Home = (props: {
   introduction: string;
   projects: string;
-  readme: string;
   posts: PostData[];
 }) => {
   return (
     <div className="content">
       <Head>
-        <title>Introducing Christian</title>
+        <title>Lindeneg Homepage</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -23,10 +22,17 @@ const Home = (props: {
       </div>
 
       <div className="section">
-        <h2>Projects</h2>
+        <h2>Sample Projects</h2>
         <div className="medium-wide">
           <Markdown source={props.projects} />
         </div>
+      </div>
+
+      <div className="section">
+        <h2 className="centered"></h2>
+        <a href="https://github.com/lindeneg" target="_blank" rel="noreferrer">
+          <button className="fork-button">MORE PROJECTS</button>
+        </a>
       </div>
 
       <div className="section">
@@ -45,8 +51,6 @@ export default Home;
 export const getStaticProps = async () => {
   const introduction = await loadMarkdownFile("introduction.md");
   const projects = await loadMarkdownFile("projects.md");
-  const readmeFile = await import(`../${"README.md"}`);
-  const readme = readmeFile.default;
   const posts = await loadBlogPosts();
 
   // comment out to turn off RSS generation during build step.
@@ -55,7 +59,6 @@ export const getStaticProps = async () => {
   const props = {
     introduction: introduction.contents,
     projects: projects.contents,
-    readme: readme,
     posts,
   };
 
