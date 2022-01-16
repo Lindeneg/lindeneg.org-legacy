@@ -94,15 +94,11 @@ ol p {
 }
 
 a {
-  color: turquoise;
+  color: #1c2c33;
 }
 
 a:hover {
   color: #c00;
-}
-
-a:visited {
-  color: purple;
 }
 
 /* page sections */
