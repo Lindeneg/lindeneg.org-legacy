@@ -189,10 +189,6 @@ hr {
   text-align: center;
 }
 
-.alternate {
-  background-color: #eee;
-}
-
 .flex-spacer {
   flex: 1;
 }
@@ -204,7 +200,7 @@ hr {
 }
 
 .fork-button {
-  background-color: turquoise;
+  background-color: #1c2c33;
   border-radius: 10px;
   border: none;
   color: white;
@@ -213,7 +209,7 @@ hr {
   cursor: pointer;
 }
 .fork-button:hover {
-  background-color: mediumturquoise;
+  background-color: #2f454f;
 }
 
 .author-container {
