@@ -6,26 +6,26 @@ import { PostCard } from "../components/PostCard";
 
 const Home = (props: {
   introduction: string;
-  features: string;
+  projects: string;
   readme: string;
   posts: PostData[];
 }) => {
   return (
     <div className="content">
       <Head>
-        <title>Introducing Devii</title>
+        <title>Introducing Christian</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="introduction">
-        <h1>Introduction to Devii</h1>
+        <h1>Hello There</h1>
         <Markdown source={props.introduction} />
       </div>
 
       <div className="section">
-        <h2>Features</h2>
+        <h2>Projects</h2>
         <div className="medium-wide">
-          <Markdown source={props.features} />
+          <Markdown source={props.projects} />
         </div>
       </div>
 
@@ -44,7 +44,7 @@ export default Home;
 
 export const getStaticProps = async () => {
   const introduction = await loadMarkdownFile("introduction.md");
-  const features = await loadMarkdownFile("features.md");
+  const projects = await loadMarkdownFile("projects.md");
   const readmeFile = await import(`../${"README.md"}`);
   const readme = readmeFile.default;
   const posts = await loadBlogPosts();
@@ -54,7 +54,7 @@ export const getStaticProps = async () => {
 
   const props = {
     introduction: introduction.contents,
-    features: features.contents,
+    projects: projects.contents,
     readme: readme,
     posts,
   };
