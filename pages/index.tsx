@@ -30,7 +30,11 @@ const Home = (props: {
 
       <div className="section">
         <h2 className="centered"></h2>
-        <a href="https://github.com/lindeneg" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/lindeneg?tab=repositories"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button className="fork-button">MORE PROJECTS</button>
         </a>
       </div>
