@@ -1,21 +1,63 @@
-It may not look like much, but Devii does a lot out of the box.
+#### generate-next-links
 
-**Markdown loading and rendering**: Using Next.js dynamic imports, you can load Markdown files and pass them into your Next.js pages as props. Easy peasy.
+Generate a TypeScript enum with pathnames to all pages in a [Next.js](https://nextjs.org/) application.
 
-**TypeScript + React**: Markdown is great for text-heavy, non-interactive content. For everything else, you'll want something a little more expressive. Devii makes it easy to mix Markdown and React on the same page. Just load your Markdown files with dynamic imports, pass it into your component as a prop, and render it with the `Markdown.tsx` component.
+- <a href="https://github.com/Lindeneg/generate-next-links" target="_blank">repository</a> | <a href="https://npmjs.com/package/generate-next-links" target="_blank">package</a>
+- Dynamic paths are supported and works well with `next/link`
+- Catch-all routes are supported
+- Tested with Jest
 
-**Built-in support for blogs**: Devii provides a utility for parsing Markdown blog posts with frontmatter metadata into a structured TypeScript object. Supported tags include: `title`, `subtitle`, `datePublished`, `tags`, `description`, `canonicalUrl`, `author`, `authorPhoto`, `authorTwitter`, `bannerPhoto`, and `thumbnailPhoto`
+---
 
-**Medium-inspired styles**: The Markdown components (`Markdown.tsx`) contains default styles inspired by Medium.
+#### cl-react-hooks
 
-**Google Analytics**: Just add your Google Analytics ID (e.g. 'UA-999999999-1') to `globals.ts` and the appropriate snippet will be automatically added to every page.
+Collection of React hooks in TypeScript.
 
-**RSS feed generation**: An RSS feed is auto-generated from your blog post feed.
+- <a href="https://github.com/Lindeneg/cl-react-hooks" target="_blank">mono-repository</a>
+- Tested with Jest
 
-**SEO best practices**: Every blog post page automatically populated meta tags based on the post metadata. This includes a `title` tag, `meta` tags, `og:` tags, Twitter metadata, and a `link` tag containing the canonical URL.
+**Hooks**
 
-**GitHub-style code blocks**: with syntax highlighting powered by [react-syntax-highlighter](https://github.com/conorhastings/react-syntax-highlighter). Works out-of-the-box for all programming languages. Just use Markdown's triple backtick syntax with a "language identifier", [just like GitHub](https://help.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks).
+|                   |     |                                                                                                                        |
+| ----------------- | --- | ---------------------------------------------------------------------------------------------------------------------- | --- | ------------------------------------------------------------------------------------------- |
+| _useSearch_       |     | <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/search" target="_blank">repository</a>        |     | <a href="https://www.npmjs.com/package/@lindeneg/search" target="_blank">package</a>        |
+| _useQueryParams_  |     | <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/query-params" target="_blank">repository</a>  |     | <a href="https://www.npmjs.com/package/@lindeneg/query-params" target="_blank">package</a>  |
+| _useMemoryCache_  |     | <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/memory-cache" target="_blank">repository</a>  |     | <a href="https://www.npmjs.com/package/@lindeneg/memory-cache" target="_blank">package</a>  |
+| _useBrowserCache_ |     | <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/browser-cache" target="_blank">repository</a> |     | <a href="https://www.npmjs.com/package/@lindeneg/browser-cache" target="_blank">package</a> |
+| _useOnKey_        |     | <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/on-key" target="_blank">repository</a>        |     | <a href="https://www.npmjs.com/package/@lindeneg/on-key" target="_blank">package</a>        |
 
-**Static generation**: you can generate a fully static version of your site using `yarn build && yarn export`. Powered by Next.js.
+---
 
-**Zero magic**: You can view and modify every aspect of the site. If you're looking for a starting point, start modifying `index.tsx` (the home page), `BlogPost.tsx` (the blog post template), and `Markdown.tsx` (the Markdown component). And of course you can add entirely new pages/components as well!
+#### cl-fill-link
+
+Fill dynamic string path with values.
+
+- <a href="https://github.com/Lindeneg/cl-fill-link" target="_blank">repository</a> | <a href="https://npmjs.com/package/cl-fill-link" target="_blank">package</a>
+- Intended to be used in conjunction with `generate-next-links`
+- Tested with Jest
+
+---
+
+#### cl-react-tailblocks
+
+Implementation of [Tailblocks](https://tailblocks.cc/) in React + TypeScript.
+
+- <a href="https://github.com/Lindeneg/cl-react-tailblocks" target="_blank">repository</a> | <a href="https://npmjs.com/package/cl-react-tailblocks" target="_blank">package</a> | <a href="https://lindeneg.github.io/cl-react-tailblocks" target="_blank">storybook</a> | <a href="https://lindeneg.github.io/cl-react-tailblocks-example" target="_blank">demo</a>
+- Majority of Tailblocks components are supported
+- Supports light / dark primary theme
+- Supports 7 secondary theme colors
+- Tested with Jest
+
+---
+
+#### MouseflowReport
+
+C# program to generate CSV reports for Mouseflow connected websites.
+
+- <a href="https://github.com/Lindeneg/mouseflowreport" target="_blank">repository</a> : **note: no longer maintained**
+- Interact with Mouseflow API to extract recording data
+- Allows multiple projects & setting of date-range
+- Allows for multiple report options
+- Tested with xUnit
+
+---
