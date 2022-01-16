@@ -13,7 +13,7 @@ Generate a TypeScript enum with pathnames to all pages in a [Next.js](https://ne
 
 Collection of React hooks in TypeScript.
 
-- <a href="https://github.com/Lindeneg/cl-react-hooks" target="_blank">mono-repository</a> | <a href="https://lindeneg.github.io/cl-react-hooks-example" target="_blank">demo</a>
+- <a href="https://github.com/Lindeneg/cl-react-hooks" target="_blank">mono-repository</a> | <a href="https://github.com/Lindeneg/cl-react-hooks-example" target="_blank">example</a> | <a href="https://lindeneg.github.io/cl-react-hooks-example" target="_blank">demo</a>
 - Tested with Jest
 
 **Hooks**
