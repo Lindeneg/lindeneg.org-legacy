@@ -13,7 +13,7 @@ Generate a TypeScript enum with pathnames to all pages in a [Next.js](https://ne
 
 Collection of React hooks in TypeScript.
 
-- <a href="https://github.com/Lindeneg/cl-react-hooks" target="_blank">mono-repository</a> | <a href="https://github.com/Lindeneg/cl-react-hooks-example" target="_blank">example</a>
+- <a href="https://github.com/Lindeneg/cl-react-hooks" target="_blank">mono-repository</a>
 - Tested with Jest
 
 **useSearch**
@@ -38,16 +38,6 @@ Collection of React hooks in TypeScript.
 
 ---
 
-#### cl-fill-link
-
-Fill dynamic string path with values.
-
-- <a href="https://github.com/Lindeneg/cl-fill-link" target="_blank">repository</a> | <a href="https://npmjs.com/package/cl-fill-link" target="_blank">package</a>
-- Intended to be used in conjunction with `generate-next-links`
-- Tested with Jest
-
----
-
 #### cl-react-tailblocks
 
 Implementation of [Tailblocks](https://tailblocks.cc/) in React + TypeScript.
@@ -57,17 +47,3 @@ Implementation of [Tailblocks](https://tailblocks.cc/) in React + TypeScript.
 - Supports light / dark primary theme
 - Supports 7 secondary theme colors
 - Tested with Jest
-
----
-
-#### MouseflowReport
-
-C# program to generate CSV reports for Mouseflow connected websites.
-
-- <a href="https://github.com/Lindeneg/mouseflowreport" target="_blank">repository</a> : **note: no longer maintained**
-- Interact with Mouseflow API to extract recording data
-- Allows multiple projects & setting of date-range
-- Allows for multiple report options
-- Tested with xUnit
-
----
