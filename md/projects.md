@@ -9,32 +9,12 @@ Generate a TypeScript enum with pathnames to all pages in a [Next.js](https://ne
 
 ---
 
-#### cl-react-hooks
+#### lindeneg-npm-packages
 
-Collection of React hooks in TypeScript.
+Collection of npm packages in TypeScript.
 
-- <a href="https://github.com/Lindeneg/cl-react-hooks" target="_blank">mono-repository</a>
+- <a href="https://github.com/Lindeneg/lindeneg-npm-packages" target="_blank">mono-repository</a>
 - Tested with Jest
-
-**useSearch**
-
-- <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/search" target="_blank">readme</a> | <a href="https://www.npmjs.com/package/@lindeneg/search" target="_blank">package</a>
-
-**useQueryParams**
-
-- <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/query-params" target="_blank">readme</a> | <a href="https://www.npmjs.com/package/@lindeneg/query-params" target="_blank">package</a>
-
-**useMemoryCache**
-
-- <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/memory-cache" target="_blank">readme</a> | <a href="https://www.npmjs.com/package/@lindeneg/memory-cache" target="_blank">package</a>
-
-**useBrowserCache**
-
-- <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/browser-cache" target="_blank">readme</a> | <a href="https://www.npmjs.com/package/@lindeneg/browser-cache" target="_blank">package</a>
-
-**useOnKey**
-
-- <a href="https://github.com/lindeneg/cl-react-hooks/tree/master/packages/on-key" target="_blank">readme</a> | <a href="https://www.npmjs.com/package/@lindeneg/on-key" target="_blank">package</a>
 
 ---
 
