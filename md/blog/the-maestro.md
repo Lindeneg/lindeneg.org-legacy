@@ -22,7 +22,7 @@ canonicalUrl: https://lindeneg.org/blog/the-maestro
 
 Chick's rendition of `All Blues` (_the video above_) received the <a href="https://en.wikipedia.org/wiki/Grammy_Award_for_Best_Improvised_Jazz_Solo" target="_blank" rel="noreferrer">Grammy Award for Best Improvised Jazz Solo</a> shortly after he sadly passed away in 2021. The tune itself is written by the magnificent <a href="https://en.wikipedia.org/wiki/Miles_Davis" target="_blank" rel="noreferrer">Miles Davis</a> and first occurred on the legendary album <a href="https://en.wikipedia.org/wiki/Kind_of_Blue" target="_blank" rel="noreferrer">Kind of Blue</a>.
 
-Chick was a master of combining the harmony and improvisation from jazz with, say, the discipline and precision from classical music or the irresistible rhythmic feel from func - and many more. He never stopped exploring and never seemed to really have a dip in output quality.
+Chick was a master of combining the harmony and improvisation from jazz with, say, the discipline and precision from classical music or the irresistible rhythmic feel from func - and much more. He never stopped exploring and never seemed to really have a dip in output quality.
 
 The next video is a solo concert in Brussels, Belgium where Chick combines a composer dear to my heart, <a href="https://en.wikipedia.org/wiki/George_Gershwin" target="_blank" rel="noreferrer">George Gershwin</a>, with the classical genius <a href="https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart" target="_blank" rel="noreferrer">Mozart</a>.
 
