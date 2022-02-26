@@ -122,6 +122,14 @@ a:hover {
   width: 100%;
 }
 
+.footer .wrapper {
+  display: inline-flex;
+}
+
+.footer .wrapper span {
+  text-decoration: underline;
+}
+
 .header,
 .footer {
   width: 100%;
