@@ -7,7 +7,7 @@ export const Footer: React.FC = () => (
       <p>{`© ${globals.yourName} ${new Date().getFullYear()}`}</p>
       <p>|</p>
       <a href="https://github.com/colinhacks/devii" target="_blank">
-        Made with: <span>Devii</span>
+        Made with: <span>devii</span>
       </a>
       <p>|</p>
       <a href="https://github.com/colinhacks" target="_blank">
