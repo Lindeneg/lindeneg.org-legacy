@@ -17,13 +17,3 @@ Collection of npm packages in TypeScript.
 - Tested with Jest
 
 ---
-
-#### cl-react-tailblocks
-
-Implementation of [Tailblocks](https://tailblocks.cc/) in React + TypeScript.
-
-- <a href="https://github.com/Lindeneg/cl-react-tailblocks" target="_blank">repository</a> | <a href="https://npmjs.com/package/cl-react-tailblocks" target="_blank">package</a> | <a href="https://lindeneg.github.io/cl-react-tailblocks" target="_blank">storybook</a> | <a href="https://lindeneg.github.io/cl-react-tailblocks-example" target="_blank">demo</a>
-- Majority of Tailblocks components are supported
-- Supports light / dark primary theme
-- Supports 7 secondary theme colors
-- Tested with Jest
