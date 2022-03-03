@@ -36,7 +36,7 @@ For me, when I'm invited to take in the spontaneous ideas and instinctive creati
 
 The above tune does all those things for me. An incredible show of improvisational mastery that makes that particular version of Autumn Leaves, the best I've ever heard.
 
-I could ramble on but lets hear a last tune from <a href="https://en.wikipedia.org/wiki/Kind_of_Blue" target="_blank" rel="noreferrer">Kind of Blue</a>, famously the best-selling jazz record of all-time. I've been listening to this tune for over 20 years, and it just never gets boring to me. It's called <a href="https://en.wikipedia.org/wiki/Kind_of_Blue" target="_blank" rel="noreferrer">"So What"</a>.
+I could ramble on but lets hear a last tune from <a href="https://en.wikipedia.org/wiki/Kind_of_Blue" target="_blank" rel="noreferrer">Kind of Blue</a>, famously the best-selling jazz record of all-time. I've been listening to this tune for over 20 years, and it just never gets boring to me. It's called <a href="https://en.wikipedia.org/wiki/So_What_(Miles_Davis_composition)" target="_blank" rel="noreferrer">"So What"</a>.
 
 <div>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ylXk1LBvIqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
