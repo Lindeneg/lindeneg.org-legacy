@@ -3,7 +3,13 @@ import { globals } from '../globals';
 
 export const Footer: React.FC = () => (
   <div className="footer">
-    <p>{`© ${globals.yourName} ${new Date().getFullYear()}`}</p>
+    <div className="wrapper">
+      <p>{`© ${globals.yourName} ${new Date().getFullYear()}`}</p>
+      <p>|</p>
+      <a href="https://github.com/colinhacks/devii" target="_blank">
+        Made with: <span>devii</span>
+      </a>
+    </div>
     <a href="/rss.xml">
       <img src="/img/rss-white.svg" alt="RSS Feed" height="30" width="30" />
     </a>
