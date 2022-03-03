@@ -20,7 +20,7 @@ canonicalUrl: https://lindeneg.org/blog/the-genius
 
 <a href="https://en.wikipedia.org/wiki/Miles_Davis" target="_blank" rel="noreferrer">Miles Davis</a> is a hero of mine. He has inspired me throughout my life and I'd like to talk a bit about Miles and why his music means a whole lot to me.
 
-I invite you to listen to the above tune while you read. It's actually not from a Miles album but rather from an album called Something Else created by <a href="https://en.wikipedia.org/wiki/Cannonball_Adderley" target="_blank" rel="noreferrer">"Cannonball" Adderley</a>. 
+I invite you to listen to the above tune while you read. It's actually not from a Miles album but rather from an album called Something Else created by <a href="https://en.wikipedia.org/wiki/Cannonball_Adderley" target="_blank" rel="noreferrer">"Cannonball" Adderley</a>, that is, among others, featuring Miles.
 
 The tune is called <a href="https://en.wikipedia.org/wiki/Autumn_Leaves_(1945_song)" target="_blank" rel="noreferrer">Autumn Leaves</a>, an incredible composition that has become one of the most recorded jazz standards.
 
