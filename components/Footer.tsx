@@ -9,10 +9,6 @@ export const Footer: React.FC = () => (
       <a href="https://github.com/colinhacks/devii" target="_blank">
         Made with: <span>devii</span>
       </a>
-      <p>|</p>
-      <a href="https://github.com/colinhacks" target="_blank">
-        Credit to: <span>colinhacks</span>
-      </a>
     </div>
     <a href="/rss.xml">
       <img src="/img/rss-white.svg" alt="RSS Feed" height="30" width="30" />
