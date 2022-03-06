@@ -26,7 +26,7 @@ The tune is called <a href="https://en.wikipedia.org/wiki/Autumn_Leaves_(1945_so
 
 What is so special about this version? Well, lets talk about the essence of jazz, one of its critical components. <a href="https://en.wikipedia.org/wiki/Jazz_improvisation" target="_blank" rel="noreferrer">Improvisation</a>.
 
-That is, the ability to express your feelings throughout music in the now. It's an incredibly hard thing to do and even harder to make sound good, have coherence and be dynamic.
+That is, the ability to express your feelings through music in the now. It's an incredibly hard thing to do and even harder to make sound good, have coherence and be dynamic.
 
 The best improvisers are able to invite the listener on a journey that is both melodically and harmonically inexplicably intriguing.
 
@@ -34,7 +34,7 @@ Any composition serves as the framework wherein to improvise by providing a chor
 
 For me, when I'm invited to take in the spontaneous ideas and instinctive creativity of a great artist, I'm left in awe of the incredible ability to spawn a wealth of emotions that connects with me, to a point where my entire body swings like a pendulum and I can't stop smiling. Music really makes me happy, especially jazz, particularly Miles. 
 
-The above tune does all those things for me. An incredible show of improvisational mastery that makes that particular version of Autumn Leaves, the best I've ever heard.
+The above tune does all those things for me. An incredible show of improvisational mastery that makes that version of Autumn Leaves, the best I've ever heard.
 
 I could ramble on but lets hear a last tune from <a href="https://en.wikipedia.org/wiki/Kind_of_Blue" target="_blank" rel="noreferrer">Kind of Blue</a>, famously the best-selling jazz record of all-time. I've been listening to this tune for over 20 years, and it just never gets boring to me. It's called <a href="https://en.wikipedia.org/wiki/So_What_(Miles_Davis_composition)" target="_blank" rel="noreferrer">"So What"</a>.
 

@@ -35,7 +35,7 @@ There's not much to say. It's just timeless, wonderful music.
 Lastly, one of his greatest compositions, <a href="https://en.wikipedia.org/wiki/Spain_(instrumental)" target="_blank" rel="noreferrer">Spain</a>, is one of his most loved pieces. There are many great takes. This is one of them.
 
 <div>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/MXGWUppikhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/wD92FS1Y7c4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Rest in Peace Maestro. What a blessing it was to hear you play.
