@@ -18,7 +18,7 @@ canonicalUrl: https://lindeneg.org/blog/the-genius
   <iframe width="560" height="315" src="https://www.youtube.com/embed/u37RF5xKNq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<a href="https://en.wikipedia.org/wiki/Miles_Davis" target="_blank" rel="noreferrer">Miles Davis</a> is a hero of mine. He has inspired me throughout my life and I'd like to talk a bit about Miles and why his music means a whole lot to me.
+<a href="https://en.wikipedia.org/wiki/Miles_Davis" target="_blank" rel="noreferrer">Miles Davis</a> is a hero of mine. He has inspired me throughout my life.
 
 I invite you to listen to the above tune while you read. It's actually not from a Miles album but rather from an album called Something Else created by <a href="https://en.wikipedia.org/wiki/Cannonball_Adderley" target="_blank" rel="noreferrer">"Cannonball" Adderley</a>, that is, among others, featuring Miles.
 
