@@ -9,11 +9,10 @@ Generate a TypeScript enum with pathnames to all pages in a [Next.js](https://ne
 
 ---
 
-#### lindeneg-npm-packages
+#### dmi-open-data-go
+<a href="https://confluence.govcloud.dk/display/FDAPI/Danish+Meteorological+Institute+-+Open+Data" target="_blank">DMI</a> API wrapper in <a href="https://en.wikipedia.org/wiki/Go_(programming_language)" target="_blank">Go</a>.
 
-Collection of npm packages in TypeScript.
-
-- <a href="https://github.com/Lindeneg/lindeneg-npm-packages" target="_blank">mono-repository</a>
-- Tested with Jest
-
+- <a href="https://github.com/Lindeneg/dmi-open-data-go" target="_blank">repository</a>
+- Can be consumed as a <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">CLI</a>
+- Can be consumed as a `package`
 ---
