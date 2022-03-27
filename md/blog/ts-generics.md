@@ -22,7 +22,13 @@ canonicalUrl: https://lindeneg.org/blog/ts-generics
   - [Constraints](#constraints)
   - [Cache Data Type](#cache-data-type)
   - [Cache Config](#cache-config)
-  - [Methods](#methods)
+  - [Get](#get)
+  - [Set](#set)
+  - [Remove](#remove)
+  - [CustomCache](#custom-cache)
+- [Tests](#tests)
+- [Note on Interfaces](#note-on-interfaces)
+- [Exercises](#exercises)
 
 ### <a name="intro"></a>Introduction
 
@@ -237,7 +243,7 @@ Great. Lets also think about the cache entries themselves.
 
 We want each entry to be associated with a time-to-live, or `TTL`, timestamp and if the entry has been outdated, we want to ignore/delete it.
 
-We should create a new `CacheEntry` type that describes the shape of each.. well cache entry.
+We should create a new `CacheEntry` type
 
 ```ts
 // ./src/types.ts
@@ -256,7 +262,7 @@ export type CacheData<T extends EmptyObj> = Partial<{
 
 ##### <a name="cache-config"></a>Cache Config
 
-Since we've introduced `TTL`, we should probably allow consumers to define a value for their needs. Thus, we could define a `CacheConfig` type and utilize our previously declared types
+Since we've introduced `TTL`, we should probably allow consumers to define a value for their needs. Thus, we could define a `CacheConfig` type
 
 ```ts
 // ./src/types.ts
@@ -271,7 +277,7 @@ export type CacheConfig<T extends EmptyObj> = {
 Our `CustomCache` can now use the new types like so
 
 ```ts
-import type { CacheConfig, CacheData } from './types';
+import type { CacheConfig, CacheData, CacheEntry, EmptyObj } from './types';
 
 class CustomCache<T extends EmptyObj> {
   private data: CacheData<T>;
@@ -344,10 +350,7 @@ And we'll convert that `data` into type `CacheData`
 }
 ```
 
-We'll have to implement a `trim` function at some point that can iterate over the cache and check for expired items.
-For now, however, we'll focus on the core cache methods.
-
-##### <a name="methods"></a>Methods
+##### <a name="get"></a>Get
 
 Lets implement some methods! We at least want to have `get`, `set` and `remove` methods and we want all of them to be type-safe.
 
@@ -439,4 +442,113 @@ const something = cache.get('something');
 
 Nice! The return type of the `get` call is `inferred` from the `key` argument by looking up the property in `T`, which in this case is of type `CacheData`.
 
-Lets implement the `set` method.
+##### <a name="set"></a>Set
+
+Lets implement the `set` method. We'd like the `value` to be constrained by the `key`.
+
+Using the above types as an example, if `set` was called with `order` as the `key`,
+then we know that the value must be of type `Order`, which is a union of `asc` and `desc`.
+
+```ts
+class CustomCache<T extends EmptyObj> {
+
+  ...
+
+  set = <K extends keyof T>(key: K, value: T[K]): void => {
+    this.data[key] = this.createEntry(value);
+  };
+}
+```
+
+Lets implement the `remove` method and then move on to testing, so we can actually make sure our code works as expected.
+
+##### <a name="remove"></a>Remove
+
+```ts
+class CustomCache<T extends EmptyObj> {
+
+  ...
+
+  remove = <K extends keyof T>(key: K): CacheEntry<T[K]> | null => {
+    const entry = this.data[key];
+    if (entry) {
+      delete this.data[key];
+      return entry;
+    }
+    return null;
+  };
+}
+```
+
+Now we can update the `get` method to make a call to `remove` if the entry has expired.
+
+##### <a name="custom-cache"></a>CustomCache
+
+Thus, the `CustomCache` will look like this
+
+```ts
+import type { CacheConfig, CacheData, CacheEntry, EmptyObj } from './types';
+
+class CustomCache<T extends EmptyObj> {
+  private data: CacheData<T>;
+  private config: Omit<CacheConfig<T>, 'data'>;
+
+  constructor({
+    data = {},
+    ttl = 3600,
+    trim = 600,
+  }: Partial<CacheConfig<T>> = {}) {
+    this.config = { ttl, trim };
+    this.data = this.mapInitialData(data);
+  }
+
+  get = <K extends keyof T>(key: K): T[K] | null => {
+    const entry = this.data[key];
+    if (typeof entry?.value !== 'undefined' && !this.hasExpired(entry)) {
+      return entry.value;
+    }
+    this.remove(key);
+    return null;
+  };
+
+  set = <K extends keyof T>(key: K, value: T[K]): void => {
+    this.data[key] = this.createEntry(value);
+  };
+
+  remove = <K extends keyof T>(key: K): CacheEntry<T[K]> | null => {
+    const entry = this.data[key];
+    if (entry) {
+      delete this.data[key];
+      return entry;
+    }
+    return null;
+  };
+
+  private hasExpired = (entry?: CacheEntry<unknown>) => {
+    return entry && entry.expires < this.now();
+  };
+
+  private mapInitialData = (data: Partial<T>): CacheData<T> => {
+    const result: CacheData<T> = {};
+    return Object.keys(data).reduce((a, c) => {
+      return {
+        ...a,
+        [c]: this.createEntry(data[c]),
+      };
+    }, result);
+  };
+
+  private createEntry = <T>(value: T): CacheEntry<T> => {
+    return {
+      value,
+      expires: this.now() + this.config.ttl,
+    };
+  };
+
+  private now = () => {
+    return Date.now() / 1000;
+  };
+}
+```
+
+##### <a name="tests"></a>Tests
