@@ -2,9 +2,20 @@
 
 Generate a TypeScript enum with pathnames to all pages in a [Next.js](https://nextjs.org/) application.
 
-- <a href="https://github.com/Lindeneg/generate-next-links" target="_blank">repository</a> | <a href="https://npmjs.com/package/generate-next-links" target="_blank">package</a>
+- <a href="https://github.com/Lindeneg/generate-next-links" target="_blank">repository</a>
 - Dynamic paths are supported and works well with `next/link`
 - Catch-all routes are supported
+- Tested with Jest
+
+---
+
+#### cl-fill-link
+
+Fill dynamic links. Intended to be used with `generate-next-links`.
+
+- <a href="https://github.com/Lindeneg/cl-fill-link" target="_blank">repository</a>
+- Compatible any input that follows nextjs dynamic routes
+- Is type-safe out of the box
 - Tested with Jest
 
 ---
