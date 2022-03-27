@@ -17,10 +17,6 @@ canonicalUrl: https://lindeneg.org/blog/ts-generics
 - [Introduction](#intro)
 - [Objective](#objective)
 - [Setup](#setup)
-  - [Create Directory](#setup-dirs)
-  - [Initialize Project](#setup-init)
-  - [Create first file](#setup-file)
-  - [Add scripts](#setup-scripts)
 - [Lets Start!](#start)
   - [Generics](#generics)
   - [Constraints](#constraints)
@@ -42,7 +38,8 @@ The best way to understand all of this, I believe is to create something! So we'
 - Make the cache type-safe:
   - By accepting a generic type for cache entries
   - Or by inferring the types from an `initialData` argument
-- Implement <a href="https://en.wikipedia.org/wiki/Time_to_live" target="_blank" rel="noreferrer">TTL</a> functionality.
+- Implement <a href="https://en.wikipedia.org/wiki/Time_to_live" target="_blank" rel="noreferrer">TTL</a> functionality
+- Test all functionality with `Jest`
 
 ### <a name="setup"></a>Setup
 
@@ -64,17 +61,6 @@ yarn init -y && yarn add -D typescript jest @types/jest @types/node && yarn run 
 
 ```bash
 mkdir src && touch src/cache.ts
-```
-
-##### Add scripts
-
-Add these `scripts` to your `package.json` file:
-
-```json
-{
-  "build": "tsc",
-  "test": "jest"
-}
 ```
 
 ### <a name="start"></a>Lets Start!
@@ -261,9 +247,9 @@ export type CacheEntry<T> = {
   value: T;
 };
 
-export type CacheData<T extends EmptyObj> = {
-  [K in keyof T]?: CacheEntry<T[K]>;
-};
+export type CacheData<T extends EmptyObj> = Partial<{
+  [K in keyof T]: CacheEntry<T[K]>;
+}>;
 ```
 
 `CacheData` takes the same constraint as `initialData` but we map over the type and ensure that each property is optional and if defined, resolves to a `CacheEntry`.
@@ -278,24 +264,88 @@ Since we've introduced `TTL`, we should probably allow consumers to define a val
 export type CacheConfig<T extends EmptyObj> = {
   trim: number; // in seconds
   ttl: number; // in seconds
-  data: CacheData<T>;
+  data: Partial<T>;
 };
 ```
 
-Finally, our `CustomCache` can now use the new types like so
+Our `CustomCache` can now use the new types like so
 
 ```ts
 import type { CacheConfig, CacheData } from './types';
 
 class CustomCache<T extends EmptyObj> {
-  private data: CacheConfig<T>['data'];
+  private data: CacheData<T>;
   private config: Omit<CacheConfig<T>, 'data'>;
-  constructor({ data = {}, ttl = 3600, trim = 600 }: CacheConfig<T>) {
-    this.data = data;
+
+  constructor({
+    data = {},
+    ttl = 3600,
+    trim = 600,
+  }: Partial<CacheConfig<T>> = {}) {
     this.config = { ttl, trim };
+    this.data = data; // now this will throw an error
   }
 }
-``` 
+```
+
+We'll have to convert the `data` given to us by the consumer to our `CacheEntry` type.
+
+```ts
+class CustomCache<T extends EmptyObj> {
+  private data: CacheData<T>;
+  private config: Omit<CacheConfig<T>, 'data'>;
+
+  constructor({
+    data = {},
+    ttl = 3600,
+    trim = 600,
+  }: Partial<CacheConfig<T>> = {}) {
+    this.config = { ttl, trim };
+    this.data = this.mapInitialData(data);
+  }
+
+  private mapInitialData = (data: Partial<T>): CacheData<T> => {
+    const result: CacheData<T> = {};
+    return Object.keys(data).reduce((a, c) => {
+      return {
+        ...a,
+        [c]: this.createEntry(data[c]),
+      };
+    }, result);
+  };
+
+  private createEntry = <T>(value: T): CacheEntry<T> => {
+    return {
+      value,
+      expires: this.now() + this.config.ttl,
+    };
+  };
+
+  private now = () => {
+    return Date.now() / 1000;
+  };
+}
+```
+
+Now consumers can use the `data` property like so
+
+```ts
+const cache = new Cache({ data: { hello: 'there' } });
+```
+
+And we'll convert that `data` into type `CacheData`
+
+```ts
+{
+  hello: {
+    value: "there",
+    expires: 1648392738.447
+  }
+}
+```
+
+We'll have to implement a `trim` function at some point that can iterate over the cache and check for expired items.
+For now, however, we'll focus on the core cache methods.
 
 ##### <a name="methods"></a>Methods
 
@@ -309,7 +359,7 @@ class CustomCache<T extends EmptyObj> {
   ...
 
   get = (key/*: ?*/)/*: ?*/ => {
-    return this.data[key] || null;
+    /* ?? */
   };
 }
 ```
@@ -319,14 +369,35 @@ What should the type of the `key` argument be? `string` wont suffice here if we 
 We can achieve it like so
 
 ```ts
-get = <K extends keyof T>(key: K): Partial<T[K]> | null => {
-  return this.data[key] || null;
+get = <K extends keyof T>(key: K): T[K] | null => {
+  /* ?? */
 };
 ```
 
 Now consumers can only get keys that exists as properties in `T` and we are also able to annotate the correct return type for the function.
 
-Lets try it out!
+What about the implementation? Well, we'd like to achieve a few things:
+
+- If the entry is not found or has expired, return `null`
+- If an entry is found but has expired, delete it from the cache
+- If an entry is found and has not expired, return the value
+
+```ts
+get = <K extends keyof T>(key: K): T[K] | null => {
+  const entry = this.data[key];
+  if (typeof entry?.value !== 'undefined' && !this.hasExpired(entry)) {
+    return entry.value;
+  }
+  // TODO: remove entry from cache
+  return null;
+};
+
+private hasExpired = (entry?: CacheEntry<unknown>) => {
+  return entry && entry.expires < this.now();
+};
+```
+
+We'll have to call a `remove` method once we implement it but for now lets try it out!
 
 ```ts
 // Declare types that describes what we'd like to cache
@@ -342,14 +413,14 @@ type Post = {
   content: string;
 };
 
-type CacheData = {
+type TestCacheData = {
   theme: Theme;
   order: Order;
   posts: Post[];
 };
 
 // Initialize cache with declared type
-const cache = new CustomCache<CachedData>();
+const cache = new CustomCache<TestCacheData>();
 
 // Order | null
 const order = cache.get('order');
@@ -362,7 +433,7 @@ const theme = cache.get('theme');
 
 // TypeScript Error:
 // Argument of type '"something"' is not
-// assignable to parameter of type 'keyof CachedData'.
+// assignable to parameter of type 'keyof TestCacheData'.
 const something = cache.get('something');
 ```
 
