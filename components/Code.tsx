@@ -1,9 +1,9 @@
 import React from 'react';
-import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula';
-import { PrismLight, PrismAsyncLight } from "react-syntax-highlighter"
+import okaidia from 'react-syntax-highlighter/dist/cjs/styles/prism/okaidia';
+import { PrismLight, PrismAsyncLight } from 'react-syntax-highlighter';
 
 const SyntaxHighlighter =
-  typeof window === "undefined" ? PrismLight : PrismAsyncLight
+  typeof window === 'undefined' ? PrismLight : PrismAsyncLight;
 
 export default class Code extends React.PureComponent<{
   language: string;
@@ -14,7 +14,7 @@ export default class Code extends React.PureComponent<{
     return (
       <SyntaxHighlighter
         language={(language === 'ts' ? 'typescript' : language) || 'typescript'}
-        style={darcula}
+        style={okaidia}
       >
         {value}
       </SyntaxHighlighter>
